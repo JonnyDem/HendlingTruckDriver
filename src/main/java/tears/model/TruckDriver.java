@@ -8,8 +8,18 @@ public class TruckDriver {
     String name;
     String surname;
     int age;
-    int howManyYearsWorksInCompany;
+    int driverId;
     int howManyTonsWereDelivered;
+    int howManyYearsWorksInCompany;
+    static int countOfDrivers;
+
+    public int getDriverId() {
+        return driverId;
+    }
+
+    public void setDriverId(int driverId) {
+        this.driverId = driverId;
+    }
 
     public String getName() {
         return name;
@@ -49,5 +59,15 @@ public class TruckDriver {
 
     public void setHowManyTonsWereDelivered(int howManyTonsWereDelivered) {
         this.howManyTonsWereDelivered = howManyTonsWereDelivered;
+    }
+
+   public TruckDriver(String name, String surname, int age, int howManyTonsWereDelivered, int howManyYearsWorksInCompany) {
+        countOfDrivers++;
+        this.name = name;
+        this.surname = surname;
+        this.age = age;
+        this.driverId +=countOfDrivers;
+        this.howManyTonsWereDelivered = howManyTonsWereDelivered;
+        this.howManyYearsWorksInCompany = howManyYearsWorksInCompany;
     }
 }
