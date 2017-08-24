@@ -1,5 +1,9 @@
 package tears.model;
 
+import tears.database.TruckDriverDataBase;
+
+import java.util.ArrayList;
+
 /**
  * Created by Ваня on 23.08.2017.
  */
@@ -11,7 +15,15 @@ public class TruckDriver {
     int driverId;
     int howManyTonsWereDelivered;
     int howManyYearsWorksInCompany;
-    static int countOfDrivers;
+    String phoneNumber;
+
+    public String getPhone() {
+        return phoneNumber;
+    }
+
+    public void setPhone(String phone) {
+        phoneNumber = phone;
+    }
 
     public int getDriverId() {
         return driverId;
@@ -61,13 +73,27 @@ public class TruckDriver {
         this.howManyTonsWereDelivered = howManyTonsWereDelivered;
     }
 
-   public TruckDriver(String name, String surname, int age, int howManyTonsWereDelivered, int howManyYearsWorksInCompany) {
-        countOfDrivers++;
-        this.name = name;
-        this.surname = surname;
-        this.age = age;
-        this.driverId +=countOfDrivers;
+    /**  Constructor.
+     * @param name
+     * @param surname
+     * @param age
+     * @param howManyTonsWereDelivered
+     * @param howManyYearsWorksInCompany
+     */
+   public TruckDriver(String name, String surname, int age,String phone, int howManyTonsWereDelivered, int howManyYearsWorksInCompany) {
+       ArrayList<TruckDriver> list=TruckDriverDataBase.listOfDriver;
+       this.name = name;
+       this.surname = surname;
+       this.age = age;
+       phoneNumber=phone;
+       driverId = 1;
         this.howManyTonsWereDelivered = howManyTonsWereDelivered;
         this.howManyYearsWorksInCompany = howManyYearsWorksInCompany;
+         for (int i = 0; i < list.size(); i++) {
+             if (driverId == list.get(i).driverId) {
+                 driverId++;
+                 i = 0;
+             }
+       }System.out.println("Driver "+name+" was successfully added to data base with Id: "+driverId);
     }
 }

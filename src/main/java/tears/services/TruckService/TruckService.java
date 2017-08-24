@@ -1,11 +1,11 @@
-package tears.dao;
+package tears.services.TruckService;
 
 import tears.model.TruckDriver;
+import tears.services.massageservice.MessageType;
 
 import java.util.List;
 
-public interface TruckDriverDao {
-
+public interface TruckService {
     /**
      * @param name
      * @param surname
@@ -19,16 +19,23 @@ public interface TruckDriverDao {
      * @param driverId - identification number of driver.
      *     Deletes driver from data base.
      */
-     void deleteDriverById(int driverId);
+    void deleteDriverById(int driverId);
 
-     void getDriverById(int driverId);
+    void getDriverById(int driverId);
 
-     String getNameById(int driverId);
+    String getNameById(int driverId);
 
-     String getPhoneById(int driverId);
+    String getPhoneById(int driverId);
 
     /**
      * @return all data base (you can see it in console)
      */
-     List<TruckDriver> getAllDataBase();
+    List<TruckDriver> getAllDataBase();
+
+    /**
+     * @param message
+     * @param id - driverId
+     *   Sends messages by type.
+     */
+    void sendMassage(String message, int id, MessageType messageType);
 }
