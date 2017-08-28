@@ -2,17 +2,17 @@ package tears.services.massageservice.impl;
 
 import tears.dao.TruckDriverDao;
 import tears.dao.impl.TruckDriverDaoImpl;
-import tears.services.massageservice.Message;
+import tears.services.massageservice.MessageSending;
 
-public class MessageAddressOfDestination implements Message {
+public class MessageSendingAddressOfCustoms implements MessageSending {
 
     /**
-     {@inheritDoc}
+     * {@inheritDoc}
      */
     @Override
     public void sendMassage(String address, int id) {
         TruckDriverDao driverDao=new TruckDriverDaoImpl();
-        System.out.println("Dear "+driverDao.getNameById(id)+" address of destination is "+address);
+        System.out.println("Dear "+driverDao.getNameById(id)+" address of customs is "+address);
 
     }
 }

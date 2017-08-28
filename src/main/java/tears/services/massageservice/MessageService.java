@@ -4,9 +4,9 @@ public interface MessageService {
 
      /**
       * @param message
-      * @return class that implements interface Message.
+      * @return class that implements interface MessageSending.
       */
-    static Message getTypeOfMessage(MessageType message){
+    static MessageSending getTypeOfMessage(MessageType message){
          return null;
     };
 

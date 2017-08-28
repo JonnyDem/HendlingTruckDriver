@@ -4,7 +4,6 @@ import tears.dao.TruckDriverDao;
 import tears.dao.impl.TruckDriverDaoImpl;
 import tears.model.TruckDriver;
 import tears.services.TruckService.TruckService;
-import tears.services.massageservice.Message;
 import tears.services.massageservice.MessageService;
 import tears.services.massageservice.MessageType;
 import tears.services.massageservice.impl.MessageServiceImpl;

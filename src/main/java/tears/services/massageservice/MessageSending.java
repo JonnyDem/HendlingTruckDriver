@@ -1,6 +1,6 @@
 package tears.services.massageservice;
 
-public interface Message {
+public interface MessageSending {
 
     /**
      * @param message

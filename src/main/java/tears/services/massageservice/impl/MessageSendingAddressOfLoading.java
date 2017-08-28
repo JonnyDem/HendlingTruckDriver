@@ -2,9 +2,9 @@ package tears.services.massageservice.impl;
 
 import tears.dao.TruckDriverDao;
 import tears.dao.impl.TruckDriverDaoImpl;
-import tears.services.massageservice.Message;
+import tears.services.massageservice.MessageSending;
 
-public class MessageAddressOfLoading implements Message {
+public class MessageSendingAddressOfLoading implements MessageSending {
 
     /**
      {@inheritDoc}
