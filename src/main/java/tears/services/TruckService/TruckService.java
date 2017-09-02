@@ -1,5 +1,7 @@
 package tears.services.TruckService;
 
+import tears.exeptions.EmptyMassage;
+import tears.exeptions.IncorrectId;
 import tears.model.TruckDriver;
 import tears.services.massageservice.MessageType;
 
@@ -37,5 +39,5 @@ public interface TruckService {
      * @param id - driverId
      *   Sends messages by type.
      */
-    void sendMassage(String message, int id, MessageType messageType);
+    int sendMassage(String message, int id, MessageType messageType) throws EmptyMassage,IncorrectId;
 }

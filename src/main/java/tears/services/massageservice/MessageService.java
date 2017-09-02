@@ -1,5 +1,9 @@
 package tears.services.massageservice;
 
+import tears.exeptions.EmptyMassage;
+import tears.exeptions.IncorrectId;
+
+
 public interface MessageService {
 
      /**
@@ -16,7 +20,7 @@ public interface MessageService {
      * @param messageType - some data from enum MessageType
      */
 
-    void sendMessage(String information, int id, MessageType messageType);
+    void sendMessage(String information, int id, MessageType messageType)throws EmptyMassage,IncorrectId;
 
 
 }

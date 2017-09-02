@@ -1,5 +1,7 @@
 package tears.services.massageservice.impl;
 
+import tears.exeptions.EmptyMassage;
+import tears.exeptions.IncorrectId;
 import tears.services.massageservice.MessageSending;
 import tears.services.massageservice.MessageService;
 import tears.services.massageservice.MessageType;
@@ -32,8 +34,8 @@ public class MessageServiceImpl implements MessageService {
     /**
      * {@inheritDoc}
      */
-   public void sendMessage(String information, int id, MessageType messageType){
+   public void sendMessage(String information, int id, MessageType messageType)throws EmptyMassage,IncorrectId{
        MessageSending messageSending = this.getTypeOfMessage(messageType);
-        messageSending.sendMassage(information, id);
-    }
+       messageSending.sendMassage(information, id);
+   }
 }
