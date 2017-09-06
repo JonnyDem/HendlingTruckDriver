@@ -62,6 +62,62 @@ public class TruckDriverDaoImpl implements TruckDriverDao {
     }
 
     @Override
+    public String getSurnameById(int driverId) {
+        int count=0;
+        for (TruckDriver driver:TruckDriverDataBase.listOfDriver){
+            if(driverId==driver.getDriverId()){
+                count++;
+                return   driver.getSurname();
+            }
+        }if(count==0){
+            System.out.println("There is no driver with this id.");
+        }
+        return null;
+    }
+
+    @Override
+    public int getAgeById(int driverId) {
+        int count=0;
+        for (TruckDriver driver:TruckDriverDataBase.listOfDriver){
+            if(driverId==driver.getDriverId()){
+                count++;
+                return   driver.getAge();
+            }
+        }if(count==0){
+            System.out.println("There is no driver with this id.");
+        }
+        return -1;
+    }
+
+    @Override
+    public int getHowManyTonsWereDelivered(int driverId) {
+        int count=0;
+        for (TruckDriver driver:TruckDriverDataBase.listOfDriver){
+            if(driverId==driver.getDriverId()){
+                count++;
+                return   driver.getHowManyTonsWereDelivered();
+            }
+        }if(count==0){
+            System.out.println("There is no driver with this id.");
+        }
+        return -1;
+    }
+    @Override
+    public int getHowManyYearsWorksInCompany(int driverId) {
+        int count=0;
+        for (TruckDriver driver:TruckDriverDataBase.listOfDriver){
+            if(driverId==driver.getDriverId()){
+                count++;
+                return   driver.getHowManyYearsWorksInCompany();
+            }
+        }if(count==0){
+            System.out.println("There is no driver with this id.");
+        }
+        return -1;
+    }
+
+
+    @Override
     public String getPhoneById(int driverId) {
         int count=0;
         for (TruckDriver driver:TruckDriverDataBase.listOfDriver){
@@ -74,6 +130,17 @@ public class TruckDriverDaoImpl implements TruckDriverDao {
         }
         return null;
     }
+
+    @Override
+    public boolean isDriverExists(int driverId) {
+        for (TruckDriver driver:TruckDriverDataBase.listOfDriver){
+            if(driverId==driver.getDriverId()){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * {@inheritDoc}

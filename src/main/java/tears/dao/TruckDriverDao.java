@@ -25,7 +25,17 @@ public interface TruckDriverDao {
 
      String getNameById(int driverId);
 
+    String getSurnameById(int driverId);
+
+    int getAgeById(int driverId);
+
+    int getHowManyTonsWereDelivered(int driverId);
+
+    int getHowManyYearsWorksInCompany(int driverId);
+
      String getPhoneById(int driverId);
+
+     boolean isDriverExists(int driverId);
 
     /**
      * @return all data base (you can see it in console)

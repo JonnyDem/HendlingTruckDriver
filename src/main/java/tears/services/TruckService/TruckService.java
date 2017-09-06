@@ -5,6 +5,7 @@ import tears.exeptions.IncorrectId;
 import tears.model.TruckDriver;
 import tears.services.massageservice.MessageType;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface TruckService {
@@ -40,4 +41,11 @@ public interface TruckService {
      *   Sends messages by type.
      */
     int sendMassage(String message, int id, MessageType messageType) throws EmptyMassage,IncorrectId;
+
+    void addingDriverToFile() throws IOException;
+
+    /**
+     * Prints driver from file to console
+     */
+    void printDriver() throws IOException;
 }

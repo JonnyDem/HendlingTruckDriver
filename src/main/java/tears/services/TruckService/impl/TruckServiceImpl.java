@@ -7,10 +7,13 @@ import tears.exeptions.EmptyMassage;
 import tears.exeptions.IncorrectId;
 import tears.model.TruckDriver;
 import tears.services.TruckService.TruckService;
+import tears.services.addingtofileservice.AddingDriverToFileService;
 import tears.services.massageservice.MessageService;
 import tears.services.massageservice.MessageType;
 import tears.services.factory.ServiceFactory;
+import tears.services.printservice.PrintDriverService;
 
+import java.io.IOException;
 import java.util.List;
 
 public class TruckServiceImpl implements TruckService{
@@ -72,5 +75,19 @@ public class TruckServiceImpl implements TruckService{
 
             return 200;
         }
+
+    @Override
+    public void addingDriverToFile() throws IOException {
+        AddingDriverToFileService addDriverToFile=ServiceFactory.getAddingToFileService();
+        addDriverToFile.addingDriverToFile();
     }
+
+    @Override
+    public void printDriver() throws IOException {
+        PrintDriverService printDriverService=ServiceFactory.getPrintDriverService();
+        printDriverService.printDriverFromFile();
+    }
+
+
+}
 

@@ -6,6 +6,8 @@ import tears.services.TruckService.TruckService;
 import tears.services.factory.ServiceFactory;
 import tears.services.massageservice.MessageType;
 
+import java.io.IOException;
+
 public class Controller {
 
     public static void main(String[] args) {
@@ -21,8 +23,10 @@ public class Controller {
         try {
             truckService.sendMassage("Kiev, Nauki 12a.",2, MessageType.ADDRESS_OF_LOADING);
             truckService.sendMassage("our customer is still waiting.", 1, MessageType.OTHER_INFORMATION);
-            truckService.sendMassage("New York, 123 avenue.", 33,MessageType.ADDRESS_OF_DESTINATION);
-        } catch (IncorrectId|EmptyMassage e) {
+            truckService.sendMassage("New York, 123 avenue.", 3,MessageType.ADDRESS_OF_DESTINATION);
+            truckService.addingDriverToFile();
+            truckService.printDriver();
+        } catch (IncorrectId|EmptyMassage|IOException e) {
             e.printStackTrace();
         }
     }
