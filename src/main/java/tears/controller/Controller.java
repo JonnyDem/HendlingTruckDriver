@@ -24,8 +24,9 @@ public class Controller {
             truckService.sendMassage("Kiev, Nauki 12a.",2, MessageType.ADDRESS_OF_LOADING);
             truckService.sendMassage("our customer is still waiting.", 1, MessageType.OTHER_INFORMATION);
             truckService.sendMassage("New York, 123 avenue.", 3,MessageType.ADDRESS_OF_DESTINATION);
-            truckService.addingDriverToFile();
-            truckService.printDriver();
+           // truckService.addingDriverToFile();
+            //truckService.printDriver();
+            truckService.copyFromFileToFile();
         } catch (IncorrectId|EmptyMassage|IOException e) {
             e.printStackTrace();
         }

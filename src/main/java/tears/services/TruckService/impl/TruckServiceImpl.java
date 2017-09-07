@@ -8,6 +8,7 @@ import tears.exeptions.IncorrectId;
 import tears.model.TruckDriver;
 import tears.services.TruckService.TruckService;
 import tears.services.addingtofileservice.AddingDriverToFileService;
+import tears.services.copyinformationtofileservice.CopyService;
 import tears.services.massageservice.MessageService;
 import tears.services.massageservice.MessageType;
 import tears.services.factory.ServiceFactory;
@@ -86,6 +87,12 @@ public class TruckServiceImpl implements TruckService{
     public void printDriver() throws IOException {
         PrintDriverService printDriverService=ServiceFactory.getPrintDriverService();
         printDriverService.printDriverFromFile();
+    }
+
+    @Override
+    public void copyFromFileToFile() throws IOException {
+        CopyService copyService=ServiceFactory.getCopyService();
+        copyService.copyFromFileToFile();
     }
 
 

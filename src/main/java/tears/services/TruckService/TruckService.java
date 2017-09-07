@@ -48,4 +48,6 @@ public interface TruckService {
      * Prints driver from file to console
      */
     void printDriver() throws IOException;
+
+    public void copyFromFileToFile() throws IOException;
 }

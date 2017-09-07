@@ -4,6 +4,8 @@ import tears.services.TruckService.TruckService;
 import tears.services.TruckService.impl.TruckServiceImpl;
 import tears.services.addingtofileservice.AddingDriverToFileService;
 import tears.services.addingtofileservice.impl.AddingDriverToFileServiceImpl;
+import tears.services.copyinformationtofileservice.CopyService;
+import tears.services.copyinformationtofileservice.impl.CopyServiceImpl;
 import tears.services.massageservice.MessageService;
 import tears.services.massageservice.impl.MessageServiceImpl;
 import tears.services.printservice.PrintDriverService;
@@ -40,6 +42,12 @@ public class ServiceFactory {
      */
     public static PrintDriverService getPrintDriverService(){
         return new PrintDriverServiceImpl();
+    }
+    /**
+     * @return instance of {@link CopyService}.
+     */
+    public static CopyService getCopyService(){
+        return new CopyServiceImpl();
     }
 }
 
